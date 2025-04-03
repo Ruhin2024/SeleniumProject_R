@@ -28,7 +28,11 @@ public class C02_Locators {
 
         // youtube sayfasına gidelim
         driver.get("https://youtube.com");
-        Thread.sleep(3000);
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
         // Arama kutusunu "name" attribute e göre bularak "selenium" yazalim
         WebElement searchBox = driver.findElement(By.name("search_query"));
@@ -36,7 +40,11 @@ public class C02_Locators {
 
         // Aramayı yapalim
         searchBox.submit();
-        Thread.sleep(1000);
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
         // Sayfa başlığının selenium içerdiğini test edelim
         Assertions.assertTrue(driver.getTitle().contains("selenium"));
