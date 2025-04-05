@@ -100,6 +100,49 @@ public class Practice0601_R {
         String actualValue = searchBox.getDomProperty("value");
         Assertions.assertEquals("qa",actualValue);
         driver.quit();
+    }
 
+    @Test
+    public void test5(){
+        //test05
+        //go to techproeducation page
+        //test that the tag name of the search box is input
+        //test that the class attribute value of the search box is form-input
+
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+
+        driver.get("https://techproeducation.com");
+
+        WebElement searchBox = driver.findElement(By.id("searchHeaderInput"));
+        String expectedTagName = "input";
+        String actualTagName = searchBox.getTagName();
+        Assertions.assertEquals(expectedTagName,actualTagName);
+
+        String expectedAttributeValue = "form-input";
+        String actualAttributeValue = searchBox.getDomAttribute("class");
+        Assertions.assertEquals(expectedAttributeValue,actualAttributeValue);
+        driver.quit();
+    }
+
+    @Test
+    public void test6(){
+        //go to amazon site
+        //type qa in the search box
+        //test that qa can be successfully typed in the search box
+        //close the page
+
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+
+        driver.get("https://amazon.com");
+        WebElement searchBox = driver.findElement(By.id("twotabsearchtextbox"));
+        searchBox.sendKeys("qa");
+
+        String actualValue = searchBox.getDomProperty("value");
+        Assertions.assertEquals("qa",actualValue);
+        driver.quit();
     }
 }
