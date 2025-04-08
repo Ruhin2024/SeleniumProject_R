@@ -53,6 +53,7 @@ public class C02_Iframe extends TestBase {
         String actualIframeText = driver.findElement(By.tagName("h3")).getText();
         String expectedIframeText="iframe";
         Assertions.assertEquals(expectedIframeText,actualIframeText);
+        driver.quit();
 
     }
 }
