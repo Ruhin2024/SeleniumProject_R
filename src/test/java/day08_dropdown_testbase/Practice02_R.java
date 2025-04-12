@@ -1,4 +1,4 @@
-package day08_dropdown_testbase;
+package PracticeSL;
 
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
